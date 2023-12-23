@@ -11,17 +11,17 @@ public class KafkaMessageListener {
 
     Logger log = LoggerFactory.getLogger(KafkaMessageListener.class);
 
-    @KafkaListener(topics = "companyShare",groupId = "tatva-group")
+    @KafkaListener(topics = "companyShare",groupId = "tva-group")
     public void consumeEvents(User user) {
         log.info("consumer consume the events {} ", user.toString());
     }
 
-    @KafkaListener(topics = "companyShareTransaction",groupId = "tatva-group-1")
+    @KafkaListener(topics = "companyShareTransaction",groupId = "tva-group")
     public void consumeEventsTransaction(User user) {
         log.info("consumer consume the events {} ", user.toString());
     }
 
-    @KafkaListener(topics = "ipoListing",groupId = "tatva-group-2")
+    @KafkaListener(topics = "ipoListing",groupId = "tva-group")
     public void consumeEventsIPOListing(User user) {
         log.info("consumer consume the events {} ", user.toString());
     }
