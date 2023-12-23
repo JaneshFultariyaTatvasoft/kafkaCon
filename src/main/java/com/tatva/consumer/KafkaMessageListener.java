@@ -1,6 +1,7 @@
 package com.tatva.consumer;
 
 import com.tatva.dto.User;
+import com.tatva.model.CompanyShare;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -12,8 +13,8 @@ public class KafkaMessageListener {
     Logger log = LoggerFactory.getLogger(KafkaMessageListener.class);
 
     @KafkaListener(topics = "companyShare",groupId = "tva-group")
-    public void consumeEvents(User user) {
-        log.info("consumer consume the events {} ", user.toString());
+    public void consumeEvents(CompanyShare companyShare) {
+        log.info("consumer consume the events {} ", companyShare.toString());
     }
 
     @KafkaListener(topics = "companyShareTransaction",groupId = "tva-group")
